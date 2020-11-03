@@ -7,8 +7,11 @@
 
 #import <TargetConditionals.h>
 
-#if TARGET_OS_EMBEDDED || TARGET_OS_SIMULATOR
+#if TARGET_OS_IOS || TARGET_OS_TV
 #import <UIKit/UIKit.h>
-#else
+#elif TARGET_OS_OSX
 #import <Cocoa/Cocoa.h>
+#elif TARGET_OS_WATCH
+#import "NSIndexPath+IGListDiffable.h"
 #endif
+
